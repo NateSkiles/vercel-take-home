@@ -6,13 +6,14 @@ const config: DocsThemeConfig = {
   project: {
     link: "https://github.com/shuding/nextra-docs-template",
   },
-  chat: {
-    link: "https://discord.com",
-  },
   docsRepositoryBase: "https://github.com/NateSkiles/vercel-take-home",
   footer: {
     text: "Built by Nate Skiles",
   },
+  editLink: {
+    component: null,
+  },
+  faviconGlyph: "🔺",
 };
 
 export default config;
