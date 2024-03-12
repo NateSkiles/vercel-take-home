@@ -1,16 +1,14 @@
-# Nextra Docs Template 
+# Vercel Take Home Exercise
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+This project aims to provide a simple frontend to complete the Vercel Take Home Exercise. It is built using Next.js and Nextra.
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+## Why Nextra?
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+I choose to use the Nextra template because it provides a simple and clean way to create a documentation site.
 
-## Quick Start
+It is built on top of Next.js and MDX, which makes creating and managing content quick and easy. Allowing me to focus primarily on the exercise itself, without having to deal with much styling for formatting.
 
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
+<!-- TODO: Add screenshot of finished project -->
 
 ## Local Development
 
