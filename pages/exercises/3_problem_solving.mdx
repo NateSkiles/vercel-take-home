@@ -1,0 +1,75 @@
+import { Steps, Callout } from "nextra/components";
+
+# 3. Problem Solving
+
+Describe how you solved a challenge or technical issue that you faced in a previous role (preferably in a previous support role). How did you determine that your solution was successful?
+
+## Overview
+
+As a Technical Support Engineer (TSE) for a SaaS platform, I was assigned a dedicated support position for an enterprise-level client. The client was experiencing a critical issue with their production instance, which significantly impacted their support operations.
+
+When I was handed over the case, the only information available was that the client's agents could not interact with the system. No messages were sent, and users couldn't navigate to other tickets; the system was essentially unusable.
+
+<Callout type="info">
+  Something odd of note: the client reported that agents could use the platform
+  as expected for a few minutes at the top of the hour. However, the issue arose
+  only an hour before my day began, so it couldn't be determined if this was
+  true.
+</Callout>
+
+<Steps>
+
+### Gather Information
+
+After checking there were no ongoing incidents, I used our internal impersonation tool to log in as the client's admin to replicate the issue.
+
+I noticed immediately that the system was unusable. I couldn't navigate to any tickets, and the system was unresponsive.
+
+### Identify Potential Causes
+
+When I opened the browser's developer tools and checked the network tab, I noticed that all internal API requests failed with a 429 status code—indicating that the client's instance was being rate-limited.
+
+While a handful of rate limits were in place throughout the platform, most were to prevent runaway automations. It didn't make sense that user actions would trigger these limits instance-wide.
+
+### Investigate Errors
+
+I opened the server's elastic logs and filtered for the client's instance to confirm the issue's scope. Since the first report of the problem, ~95% of the requests have been rate-limited.
+
+Filtering the logs by services, I noticed an abnormal number of requests from the platform's reporting service worker. This service was responsible for generating reports and emailing them to the support team managers.
+
+After reviewing a handful of these reporting service worker requests, I noticed that they were all coming for the same report. After finding the scheduled report in the platform, I confirmed it was scheduled to run every hour. Additionally, the report had no data filters and had been sending all ticket data for the entire instance from the past three months.
+
+### Implement Short-Term Solution
+
+While I hadn't yet confirmed the root cause, I knew that this report was an issue or bad practice, at the very least. I turned off the report, but the rate limit issues persisted. I found the latest in-flight scheduled report via API and canceled it.
+
+After stopping the report, requests started resolving, and the system was usable once more.
+
+### Sync with Stakeholders
+
+I contacted the client to inform them of the short-term solution and to schedule a call to discuss the root cause. During the call, I explained the issue and the steps I took to resolve it.
+
+Additionally, I wanted to understand _why_ the report had been created in the first place. The client's support team manager explained that their BPO was using the report to generate a daily report of all tickets for the support team. They used the report to track agent performance and ensure no tickets were missed or stale.
+
+While this was understandable, it was not good practice and, due to their massive ticket volume, caused issues that it may not have for smaller clients. Working with the clients' CSM and TAM, we were able to sell and implement an [Amazon Kinesis data stream](https://help.kustomer.com/en_us/amazon-kinesis-data-streams-rJhIYV2fM) to meet their enterprise-level, event-driven data processing needs.
+
+I worked with the engineering team to identify and implement a platform-wide, long-term solution to prevent this issue from occurring again. Which ended up being simply a check before the report worker ran to ensure the report could return a maximum number of records.
+
+</Steps>
+
+## Review
+
+I like this case because it shows my ability to work with a client to solve a critical issue in a high-pressure environment. I identified the root cause of the problem and implemented a short-term solution to get the client back up and running. I also worked with the client to implement a long-term solution to prevent the issue from occurring again that better met their needs.
+
+I also worked with the engineering team to identify and implement a platform-wide solution to prevent this issue from occurring again. The solution ended up being simply a check before the report worker ran to limit the number of records the service could accept before processing the report.
+
+### Strengths
+
+- Quickly identified the root cause of the issue.
+- Utilized multple tools to gather information.
+- Found a more substantial solution.
+
+### Areas for Improvement
+
+- While I did quickly idetify the issue, I could have been more proactive in reaching out to the client to understand if there were any changes to their instance that could have caused the issue.
+- Reaching out to my teamates to see if they had any ideas on what could be causing the issue, could have led to a more efficient solution.

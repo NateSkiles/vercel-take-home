@@ -1,0 +1,83 @@
+import { Cards, Card } from "nextra/components";
+import {
+  Fa0,
+  Fa1,
+  Fa2,
+  Fa3,
+  Fa4,
+  Fa5,
+  Fa6,
+  Fa7,
+  Fa8,
+  Fa9,
+} from "react-icons/fa6";
+
+export default function ExerciseCards() {
+  function Fa10 () {
+    return (
+      <div style={{"display": "inline-flex"}}>
+        <Fa1 style={{"margin-right": "-12px"}}/>
+        <Fa0 />
+      </div>
+    );
+  }
+
+return (
+
+<>
+  <Cards>
+    <Card
+      title="Support Tasks"
+      href="/exercises/1_support_tasks"
+      icon={<Fa1 />}
+    />
+    <Card
+      title="Learning Goals"
+      href="/exercises/2_learning_goals"
+      icon={<Fa2 />}
+    />
+    <Card
+      title="Problem Solving"
+      href="/exercises/3_problem_solving"
+      icon={<Fa3 />}
+    />
+    <Card
+      title="Vercel Cloud Concepts"
+      href="/exercises/4_vercel_cloud_concepts"
+      icon={<Fa4 />}
+    />
+    <Card
+      title="Troubleshooting"
+      href="/exercises/5_troubleshooting"
+      icon={<Fa5 />}
+    />
+    <Card
+      title="Customer Response"
+      href="/exercises/6_customer_response"
+      icon={<Fa6 />}
+    />
+    <Card
+      title="Redirect Assistance"
+      href="/exercises/7_redirect_assistance"
+      icon={<Fa7 />}
+    />
+    <Card
+      title="Search Engine Indexing"
+      href="/exercises/8_search_engine_indexing"
+      icon={<Fa8 />}
+    />
+    <Card
+      title="Common Issues"
+      href="/exercises/9_common_issues"
+      icon={<Fa9 />}
+    />
+    <Card
+      title="Exercise Feedback"
+      href="/exercises/10_exercise_feedback"
+      icon={<Fa10 />}
+    />
+  </Cards>
+</>
+); }
+
+<ExerciseCards />
