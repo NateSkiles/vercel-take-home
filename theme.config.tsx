@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
   logo: (
     <>
       <Logo />
-      <span style={{ marginLeft: "10px" }}>Vercel Take Home</span>
+      <span style={{ marginLeft: "10px" }}>Take Home Exercise</span>
     </>
   ),
   project: {
