@@ -1,12 +1,12 @@
 {
-  "exercise1": "1. Support Tasks",
-  "exercise2": "2. Learning Goals",
-  "exercise3": "3. Problem Solving",
-  "exercise4": "4. Vercel Cloud Concepts",
-  "exercise5": "5. Troubleshooting",
-  "exercise6": "6. Customer Response",
-  "exercise7": "7. Redirect Assistance",
-  "exercise8": "8. Search Engine Indexing",
-  "exercise9": "9. Common Issues",
-  "exercise10": "10. Exercise Feedback"
+  "1_support_tasks": "1. Support Tasks",
+  "2_learning_goals": "2. Learning Goals",
+  "3_problem_solving": "3. Problem Solving",
+  "4_vercel_cloud_concepts": "4. Vercel Cloud Concepts",
+  "5_troubleshooting": "5. Troubleshooting",
+  "6_customer_response": "6. Customer Response",
+  "7_redirect_assistance": "7. Redirect Assistance",
+  "8_search_engine_indexing": "8. Search Engine Indexing",
+  "9_common_issues": "9. Common Issues",
+  "10_exercise_feedback": "10. Exercise Feedback"
 }

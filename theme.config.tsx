@@ -1,8 +1,14 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
+import Logo from "./components/Logo";
 
 const config: DocsThemeConfig = {
-  logo: <span>Vercel Take Home</span>,
+  logo: (
+    <>
+      <Logo />
+      <span style={{ marginLeft: "10px" }}>Vercel Take Home</span>
+    </>
+  ),
   project: {
     link: "https://github.com/shuding/nextra-docs-template",
   },
