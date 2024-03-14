@@ -37,13 +37,13 @@ I opened the server's elastic logs and filtered for the client's instance to con
 
 Filtering the logs by services, I noticed an abnormal number of requests from the platform's reporting service worker. This service was responsible for generating reports and emailing them to the support team managers.
 
-After reviewing a handful of these reporting service worker requests, I noticed that they were all coming for the same report. After finding the scheduled report in the platform, I confirmed it was scheduled to run every hour. Additionally, the report had no data filters and had been sending all ticket data for the entire instance from the past three months.
+After reviewing a handful of these reporting service worker requests, I noticed they were all coming for the same report. After finding the scheduled report in the platform, I confirmed it was scheduled to run every hour. Additionally, the report had no data filters and had been sending all ticket data for the entire instance from the past three months.
 
 ### Implement Short-Term Solution
 
 While I hadn't yet confirmed the root cause, I knew that this report was an issue or bad practice, at the very least. I turned off the report, but the rate limit issues persisted. I found the latest in-flight scheduled report via API and canceled it.
 
-After stopping the report, requests started resolving, and the system was usable once more.
+After stopping the report, requests started resolving, and the system was usable again.
 
 ### Sync with Stakeholders
 
@@ -59,17 +59,17 @@ I worked with the engineering team to identify and implement a platform-wide, lo
 
 ## Review
 
-I like this case because it shows my ability to work with a client to solve a critical issue in a high-pressure environment. I identified the root cause of the problem and implemented a short-term solution to get the client back up and running. I also worked with the client to implement a long-term solution to prevent the issue from occurring again that better met their needs.
+I like this case because it shows my ability to work with a client to solve a critical issue in a high-pressure environment. I identified the root cause of the problem and implemented a short-term solution to get the client back up and running. I also worked with the client to implement a long-term solution that better met their needs to prevent the issue from occurring again.
 
-I also worked with the engineering team to identify and implement a platform-wide solution to prevent this issue from occurring again. The solution ended up being simply a check before the report worker ran to limit the number of records the service could accept before processing the report.
+I also worked with the engineering team to identify and implement a platform-wide solution to prevent this issue from occurring again. The solution was simply a check before the report worker ran to limit the number of records the service could accept before processing the report.
 
 ### Strengths
 
 - Quickly identified the root cause of the issue.
-- Utilized multple tools to gather information.
+- Utilized multiple tools to gather information.
 - Found a more substantial solution.
 
 ### Areas for Improvement
 
-- While I did quickly idetify the issue, I could have been more proactive in reaching out to the client to understand if there were any changes to their instance that could have caused the issue.
-- Reaching out to my teamates to see if they had any ideas on what could be causing the issue, could have led to a more efficient solution.
+- While I quickly identified the issue, I could have been more proactive in reaching out to the client to understand if any changes to their instance could have caused it.
+- Reaching out to my teammates to see if they had any ideas on what could be causing the issue could have led to a more efficient solution.
