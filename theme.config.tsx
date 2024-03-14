@@ -10,6 +10,14 @@ const config: DocsThemeConfig = {
       <span style={{ marginLeft: "10px" }}>Take Home Exercise</span>
     </>
   ),
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="Vercel Take Home Exercise" />
+      <meta name="og:title" content="Vercel Take Home Exercise" />
+      <link rel="icon" href="/favicon.ico" />
+    </>
+  ),
   project: {
     link: "https://github.com/NateSkiles/vercel-take-home",
   },
@@ -24,7 +32,6 @@ const config: DocsThemeConfig = {
   editLink: {
     component: null,
   },
-  faviconGlyph: "▲",
 };
 
 export default config;
