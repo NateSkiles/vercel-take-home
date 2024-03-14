@@ -2,6 +2,17 @@ import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 import Logo from "./components/Logo";
 import { FaLinkedin } from "react-icons/fa6";
+import { useRouter } from "next/router";
+import Footer from "./components/Footer";
+
+const useNextSeoProps = () => {
+  const { asPath } = useRouter();
+  if (asPath !== "/") {
+    return {
+      titleTemplate: "%s | Nate Skiles",
+    };
+  }
+};
 
 const config: DocsThemeConfig = {
   logo: (
@@ -27,11 +38,12 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: "https://github.com/NateSkiles/vercel-take-home",
   footer: {
-    text: "Built by Nate Skiles",
+    component: Footer,
   },
   editLink: {
     component: null,
   },
+  useNextSeoProps,
 };
 
 export default config;
