@@ -11,7 +11,7 @@ const config: DocsThemeConfig = {
     </>
   ),
   project: {
-    link: "https://github.com/shuding/nextra-docs-template",
+    link: "https://github.com/NateSkiles/vercel-take-home",
   },
   chat: {
     link: "https://www.linkedin.com/in/nathan-skiles/",
@@ -24,7 +24,7 @@ const config: DocsThemeConfig = {
   editLink: {
     component: null,
   },
-  faviconGlyph: "🔺",
+  faviconGlyph: "▲",
 };
 
 export default config;

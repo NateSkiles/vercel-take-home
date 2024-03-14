@@ -8,4 +8,44 @@ Please write a reply to the customer. Feel free to add any information about you
 
 ### Thoughts
 
+Looking through the Vercel documentation, I found that preview deployments include an `X-Robots-Tag` header set to `noindex` to prevent preview builds from affecting production SEO ([docs](https://vercel.com/docs/deployments/preview-deployments#search-engine-indexing)).
+
+Additionally, I found that you can add headers to a Vercel deployment by adding a `vercel.json` file to the root of the project ([docs](https://vercel.com/docs/projects/project-configuration#headers)).
+
+With this in mind, the user should be able to add the `X-Robots-Tag` header to their production deployment to prevent search engines from indexing their site.
+
 ### Reply
+
+> Hi [Customer Name],
+>
+> You can prevent search engines from indexing your site by adding an `X-Robots-Tag` header to your production deployment.
+>
+> This can be done by adding a `vercel.json` file to the root of your project and adding the following configuration:
+
+```json filename="vercel.json" copy showLineNumbers
+{
+  // ...
+  "headers": [
+    {
+      // source matches all file paths
+      "source": "/(.*)",
+      "headers": [
+        {
+          // X-Robots-Tag header set to noindex tells search engines not to index the site
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
+}
+```
+
+> For more information, you can check out the Vercel documentation:
+>
+> - [Search Engine Indexing](https://vercel.com/docs/deployments/preview-deployments#search-engine-indexing)
+> - [Project Configuration](https://vercel.com/docs/projects/project-configuration#headers)
+>
+> Please let me know if you have any other questions or need further assistance.
+>
+> Best,
