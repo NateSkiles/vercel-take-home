@@ -1,5 +1,9 @@
 {
   "index": "Introduction",
+  "---": {
+    "type": "separator"
+  },
+  "exercises": "Exercises",
   "about": {
     "title": "About",
     "type": "page"
@@ -9,6 +13,5 @@
     "type": "page",
     "href": "https://www.nateskiles.dev/",
     "newWindow": true
-  },
-  "exercises": "Exercises"
+  }
 }

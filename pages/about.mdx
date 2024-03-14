@@ -1,9 +1,49 @@
-# About
+import Image from "next/image";
 
-Hi, I'm **Nate**
+export function Hero() {
+  return (
+    <section>
+      <div
+        style={{
+          marginTop: "1rem",
+        }}
+      >
+        <h2>Hi, I'm Nate!</h2>
+      </div>
+      <p>
+        Enthusiastic about discovering fresh approaches to problem-solving,
+        appreciating the art of clean code, staying updated on new libraries and
+        frameworks, all while fostering a daily commitment to growth. My
+        lifelong love for learning continues to drive my journey.
+      </p>
+      <p>
+        Guiding clients through CRM platform implementations for successful
+        project outcomes, I bring impactful solutions to the table. My tech
+        expertise optimizes operational efficiency and insights, while mentoring
+        and knowledge sharing are sources of genuine joy.
+      </p>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            borderRadius: "50%",
+            overflow: "hidden",
+            width: 250,
+            height: 250,
+            marginTop: "4rem",
+          }}
+        >
+          <Image
+            src="/hero_img.jpg"
+            alt="Nate Skiles"
+            width={250}
+            height={250}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
 
+### About
 
-
-_Enthusiastic_ about discovering fresh approaches to problem-solving, appreciating the art of _clean code_, staying updated on new libraries and frameworks, all while fostering a daily commitment to growth. My lifelong love for learning continues to drive my journey.
-
-Guiding clients through CRM platform implementations for successful project outcomes, I bring impactful solutions to the table. My tech expertise optimizes operational efficiency and insights, while mentoring and knowledge sharing are sources of genuine joy.
+<Hero />

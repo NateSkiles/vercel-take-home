@@ -8,7 +8,7 @@ I choose to use the Nextra template because it provides a simple and clean way t
 
 It is built on top of Next.js and MDX, which makes creating and managing content quick and easy. Allowing me to focus primarily on the exercise itself, without having to deal with much styling for formatting.
 
-<!-- TODO: Add screenshot of finished project -->
+![Screenshot](.github/screenshot.png)
 
 ## Local Development
 

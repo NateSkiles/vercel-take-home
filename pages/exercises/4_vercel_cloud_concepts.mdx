@@ -6,6 +6,26 @@ When would you choose to use Edge Functions, Serverless Functions, or Edge Middl
 
 ### Edge Functions
 
+Built on the V8 engine, it can run in isolated execution environments with limited Web Standard APIs. Edge functions execute in the region closest to the user, making them useful for URL rewriting, response manipulation, and security features.
+
+Since edge functions execute (generally) close to the user, if the function makes a request to a database in a different region, it could be slower than a serverless function. However, you can avoid long roundtrips by limiting Edge Functions to regions near your database or using globally distributed databases.
+
+**Use case**: Running latency, server-side code, close to the user.
+
 ### Serverless Functions
 
+By default, it uses Node.js as a runtime and executes on-demand in the Washington, D.C. (`iad1`) region. This is because Washington, D.C., is a common location for external data sources.
+
+Serverless functions can be used for various tasks, such as data processing, sending emails, or interacting with a database.
+
+**Use case**: Running server-side code, such as API endpoints that don't need to be close to the user or need to run close to the database.
+
 ### Edge Middleware
+
+Runs before a request is processed, allowing you to modify the response based on the incoming request. Enabling you to execute custom logic, rewrite, redirect, add headers, etc., before returning a response.
+
+**Use cases**: Middleware is an effective way of personalizing static content, such as feature flags. It can also handle redirects, rewrites, and headers.
+
+## Conclusion
+
+In summary, the choice between Edge Functions, Serverless Functions, and Edge Middleware depends on the use case and the application's requirements. Edge Functions help run latency-sensitive server-side code close to the user, while Serverless Functions are better suited for server-side code that might need to execute in the region of a data source. Edge Middleware is useful for modifying the response based on incoming requests, such as personalizing static content or handling redirects, rewrites, and headers.
